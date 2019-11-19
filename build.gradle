@@ -34,7 +34,18 @@ dependencies {
     //thymeleaf
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '1.3.5.RELEASE'
     compile('org.apache.tomcat.embed:tomcat-embed-jasper')
-    compile('javax.servlet:jstl:1.2')
+    compile group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.2.0'
+    // mybatis
+    compile('org.springframework.boot:spring-boot-starter-jdbc')
+    compile('mysql:mysql-connector-java')
+    compile group: 'org.mybatis', name: 'mybatis', version: '3.5.3'
+    compile("org.mybatis:mybatis-spring:1.3.0")
 
+    //lombok
+    compileOnly("org.projectlombok:lombok:1.16.16")
+
+    //swagger
+    compile("io.springfox:springfox-swagger-ui:2.6.0")
+    compile("io.springfox:springfox-swagger2:2.6.0")
 }
 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="meal.mapper.ChildrenMapper">
+    <select id="getChild_" resultType="java.lang.String">
+        select id_num from child where id_num=0501011234567;
+    </select>
+</mapper>
