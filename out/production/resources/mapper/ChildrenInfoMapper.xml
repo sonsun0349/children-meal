@@ -9,13 +9,27 @@
     </select>
 
     <select id="getChildInfo" resultType="meal.dto.ChildDetailInfoDto">
-        select c.name,ci.age,r.region_code,r.region_name from child as c
+        select c.name,ci.age,r.region_code,r.region_name,ri.region_lat,ri.region_lng from child as c
         join child_info as ci
         on c.id_num = ci.id_num
         join region as r
         on r.region_code = ci.region_code
+        join region_info as ri
+        on ri.region_code = r.region_code
         where c.id_num = #{idNum}
     </select>
 
+    <sql id="resList" >
+        select ri.region_lat,ri.region_lng
+        from region_info as ri
+        join restaurant as rt
+        on ri.region_code = rt.region_code
+    </sql>
 
+    <select id="getResList" resultType="meal.dto.RestaurantDto">
+        <include refid="resList"/>
+            <![CDATA[
+                where ri.region_code = #{regionCode}
+            ]]>
+    </select>
 </mapper>

@@ -17,4 +17,10 @@ public class ChildDetailInfoDto {
 
     @ApiModelProperty("지역이름")
     private String regionName;
+
+    @ApiModelProperty("위도")
+    private Double regionLat;
+
+    @ApiModelProperty("경도")
+    private Double regionLng;
 }
