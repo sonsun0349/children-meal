@@ -29,5 +29,4 @@ public class HomeController {
         return childService.loginProcess(id,pw);
     }
 
-
 }

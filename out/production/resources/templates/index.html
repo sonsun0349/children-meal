@@ -5,22 +5,72 @@
     <title>ChildrenMeal</title>
 </head>
 <body>
- hello junhyuk!!!
- <br>i'm sonsun</br>
  <div class="userInfo">
-     <span th:text="${childInfo.name}">이름</span>
-     <span th:text="${childInfo.age}">나이</span>
+     <span th:text="${childDetailInfo.name}">이름</span>
+     <span th:text="${childDetailInfo.age}">나이</span>
  </div>
 <div id="map" style="width:500px;height: 400px;">
-<!--    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=657888584362b34de9ae34668675e958&libraries=LIBRARY"></script>-->
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=657888584362b34de9ae34668675e958"></script>
-    <script>
-        var container = document.getElementById('map');
-        var options = {
-            center : new kakao.maps.LatLng(33.450701,126.570667),
+    <script th:inline="javascript">
+
+        /*<![CDATA[*/
+        var lat = [[ ${childDetailInfo.regionLat} ]];
+        var lng = [[ ${childDetailInfo.regionLng} ]];
+        /*]]>*/
+
+        var mapContainer = document.getElementById('map');
+        var mapOptions = {
+            center : new kakao.maps.LatLng(lat,lng),//중앙 ( 본인 )
             level : 3
         };
-        var map = new kakao.maps.Map(container,options);
+
+        var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png",//현재위치 이미 (별)
+            imageSize = new kakao.maps.Size(24,35),
+            imageOption = {offset : new kakao.maps.Point(27,35)};
+
+        var markerImage = new kakao.maps.MarkerImage(imageSrc,imageSize,imageOption);
+
+        var map = new kakao.maps.Map(mapContainer,mapOptions);
+        var markerPosition =  new kakao.maps.LatLng(lat,lng);
+
+
+        var marker = new kakao.maps.Marker({
+            position:markerPosition,
+            image:markerImage
+        });
+        marker.setMap(map);
+        marker.setDraggable(true);
+
+        var positions = [];
+        var resMarker;
+        /*<![CDATA[*/
+        var list = [[${restaurantData}]];
+        for(var i=0;i< list.length ;i++){
+            var resLat = list[i].regionLat;
+            var resLng = list[i].regionLng;
+            positions.push(
+                {latlng: new kakao.maps.LatLng(resLng,resLat)}
+            )
+        }
+        for(var j=0;j<positions.length;j++){
+            var resImageSize = new kakao.maps.Size(24,35);
+            var resMarkerImage = new kakao.maps.MarkerImage(resImageSize);
+            resMarker = new kakao.maps.Marker({
+                map:map,
+                position:positions[j].latlng,
+                image:resMarkerImage
+            });
+        }
+        /*]]>*/
+        resMarker.setMap(map);
+        resMarker.setDraggable(true);
+
+        var mapTypeControl = new kakao.maps.MapTypeControl();
+        map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+
+        var zoomControl = new kakao.maps.ZoomControl();
+        map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
     </script>
 </div>
 </body>

@@ -2,11 +2,16 @@ package meal.service.impl;
 
 import meal.dto.ChildDetailInfoDto;
 import meal.dto.ChildDto;
+import meal.dto.RestaurantDto;
 import meal.mapper.ChildrenMapper;
 import meal.service.ChildService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ChildServiceImpl implements ChildService {
@@ -17,7 +22,7 @@ public class ChildServiceImpl implements ChildService {
     public boolean loginSuccess(String id, String pw){
         boolean bool = false;
         String childNum = childrenMapper.getChildId(id,pw);
-        if(!childNum.isEmpty()){
+        if(childNum!=null){
             bool = true;
         }
         return bool;
@@ -32,12 +37,14 @@ public class ChildServiceImpl implements ChildService {
         ModelAndView mav = new ModelAndView();
         boolean isLoginSuccess = this.loginSuccess(id,pw);
         if(isLoginSuccess){
-            ChildDetailInfoDto childInfo = this.loginInfo(id,pw);
+            ChildDetailInfoDto childDetailInfo = this.loginInfo(id,pw);
+            List<RestaurantDto> list = childrenMapper.getResList(childDetailInfo.getRegionCode());
             mav.setViewName("index");
-            mav.addObject("childInfo",childInfo);
+            mav.addObject("childDetailInfo",childDetailInfo);
+            mav.addObject("restaurantData",list);
         }
         else{
-            mav.setViewName("login");
+            mav.setViewName("/login");
             mav.addObject("isLoginSuccess",isLoginSuccess);
         }
         return mav;
