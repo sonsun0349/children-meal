@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>ChildrenMeal</title>
+</head>
+
+<body>
+    <div class="userInfo">
+        <span th:text="${childInfo.name}">이름</span>
+        <span th:text="${childInfo.age}">나이</span>
+    </div>
+    <div id="map" style="width:500px;height: 400px;">
+        <!--    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=657888584362b34de9ae34668675e958&libraries=LIBRARY"></script>-->
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=657888584362b34de9ae34668675e958">
+        </script>
+        <script>
+            var container = document.getElementById('map');
+            var options = {
+                center: new kakao.maps.LatLng(33.450701, 126.570667),
+                level: 3
+            };
+            var map = new kakao.maps.Map(container, options);
+        </script>
+    </div>
+</body>
+
+</html>
