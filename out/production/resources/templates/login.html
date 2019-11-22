@@ -4,52 +4,56 @@
 <head>
     <meta charset="UTF-8" />
     <title>ChildrenMeal</title>
-    <link rel="stylesheet" type="text/css" href="../css/new_main.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/login.css" />
     <script src="https://kit.fontawesome.com/3de9fbb4b5.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-    <a href='../map2.html'>지도페이지</a>
-    <img src="../img/main_back.jpg" class='mainImg'/>
-    <div class='all'>
-        <div class='title'>
-            <h1>Children Meal Project</h1>
+    <div class='title'>
+        <h1>Children Meal Project</h1>
+    </div>
+    <div class='wave'></div>
+    <!-- 앞에 형이만들어둔 부분 -->
+    <div class='container' id='container'>
+        <div class='form-container sign-up-container'>
+            <form action="#">
+                <h1>회원가입하기</h1>
+                <span>Sign Up Our Page</span>
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <div class='social-container'>
+                    <a href="#" class='social'><i class='fab fa-facebook-f'></i></a>
+                    <a href="#" class='social'><i class='fab fa-google-plus-g'></i></a>
+                    <a href="#" class='social'><i class='fab fa-instagram'></i></a>
+                </div>
+                <button>Sign Up</button>
+            </form>
         </div>
-        <!-- 앞에 형이만들어둔 부분 -->
-        <div class='container' id='container'>
-            <div class='form-container sign-up-container'>
-                <form action="#">
-                    <h1>회원가입하기</h1>
-                    <span>Sign Up Our Page</span>
-                    <input type="text" placeholder="Name" />
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
-                    <div class='social-container'>
-                        <a href="#" class='social'><i class='fab fa-facebook-f'></i></a>
-                        <a href="#" class='social'><i class='fab fa-google-plus-g'></i></a>
-                        <a href="#" class='social'><i class='fab fa-instagram'></i></a>
-                    </div>
-                    <button>Sign Up</button>
-                </form>
-            </div>
-            <div class='form-container sign-in-container'>
-                <form method="post" id="authForm" action="/loginProcess">
+        <div class='form-container sign-in-container'>
+            <form method="post" id="authForm" action="/loginProcess">
+                <input type="hidden" name="redirectUrl" value="/" />
+                <h1>로그인하기</h1>
+                <span>Sign In Our Page</span>
+                <input type="email" id="loginId" name="loginId" placeholder="ID" />
+                <input type="password" id="loginPw" name="loginPw" placeholder="Password" />
+                <div class='social-container'>
+                    <a href="#" class='social'><i class='fab fa-facebook-f'></i></a>
+                    <a href="#" class='social'><i class='fab fa-google-plus-g'></i></a>
+                    <a href="#" class='social'><i class='fab fa-instagram'></i></a>
+                </div>
+                <div class="login_append">
+                    <span>
+                        <!-- <a href="/member/find/loginId">아이디찾기</a> -->
+                        <a href="#">아이디찾기</a>
+                        <span> 또는 </span>
+                        <!-- <a href="/member/find/password">비밀번호 찾기</a> -->
+                        <a href="#">비밀번호 찾기</a>
+                    </span>
+                </div>
+                <button type="submit">로그인</button>
 
-                    <input type="hidden" name="redirectUrl" value="/" />
-                    <h1>로그인하기</h1>
-                    <span>Sign In Our Page</span>
-                    <input type="email" id="loginId" name="loginId" placeholder="ID" />
-                    <input type="password" id="loginPw" name="loginPw" placeholder="Password" />
-                    <div class='social-container'>
-                        <a href="#" class='social'><i class='fab fa-facebook-f'></i></a>
-                        <a href="#" class='social'><i class='fab fa-google-plus-g'></i></a>
-                        <a href="#" class='social'><i class='fab fa-instagram'></i></a>
-                    </div>
-                    <div class="login_append">
-                        <span th:if="${isLoginSuccess==false}">로그인정보가 없습니다.</span>
-                    </div>
-                    <button type="submit">로그인</button>
                 </form>
             </div>
             <div class='overlay-container'>
@@ -71,8 +75,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <script src='../js/new_main.js'></script>
+    <script src='../static/js/login.js'></script>
 </body>
-
 </html>
