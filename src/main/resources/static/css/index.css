@@ -137,16 +137,6 @@ body {
 }
 
 
-.resTable-content td .getLink{
-    text-decoration: none;
-    margin:15px 0;
-}
-
-.resTable-content td .getLink:hover{
-    color:#659104;
-    font-weight: bold;
-}
-
 
 .resTable-content tbody tr {
     border-bottom: 1px solid #ddd;
