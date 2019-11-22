@@ -38,13 +38,7 @@
                 <input type="email" id="loginId" name="loginId" placeholder="ID" />
                 <input type="password" id="loginPw" name="loginPw" placeholder="Password" />
                 <div class="login_append">
-                    <span>
-                        <!-- <a href="/member/find/loginId">아이디찾기</a> -->
-                        <a href="#">아이디찾기</a>
-                        <span> 또는 </span>
-                        <!-- <a href="/member/find/password">비밀번호 찾기</a> -->
-                        <a href="#">비밀번호 찾기</a>
-                    </span>
+                    <span th:if="${isLoginSuccess==false}">로그인정보가 없습니다.</span>
                 </div>
                 <button type="submit">로그인</button>
 
