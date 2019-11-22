@@ -40,6 +40,17 @@ a:hover{
     font-weight: bold;
 }
 
+a{
+    text-decoration: none;
+    margin:15px 0;
+}
+
+a:hover{
+    color:#659104;
+    font-weight: bold;
+}
+
+
 .wave{
     position: absolute;
     width:100%;
