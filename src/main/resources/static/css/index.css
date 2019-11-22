@@ -30,25 +30,7 @@ body {
     margin: 0;
 }
 
-.getLink{
-    text-decoration: none;
-    margin:15px 0;
-}
 
-.getLink:hover{
-    color:#659104;
-    font-weight: bold;
-}
-
-a{
-    text-decoration: none;
-    margin:15px 0;
-}
-
-a:hover{
-    color:#659104;
-    font-weight: bold;
-}
 
 
 .wave{
@@ -153,6 +135,18 @@ a:hover{
 .resTable-content td {
     padding: 12px 15px;
 }
+
+
+.resTable-content td .getLink{
+    text-decoration: none;
+    margin:15px 0;
+}
+
+.resTable-content td .getLink:hover{
+    color:#659104;
+    font-weight: bold;
+}
+
 
 .resTable-content tbody tr {
     border-bottom: 1px solid #ddd;
