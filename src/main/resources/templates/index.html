@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8"/>
     <title>ChildrenMeal</title>
-    <link rel="stylesheet" type="text/css" href="../css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css"/>
 
 </head>
 <body>
-<div class='wave'></div>
+
 <div class="userInfo">
     <img src="../img/user.png" />
     <span th:text="${childDetailInfo.name}">이름</span>
     <span th:text="${childDetailInfo.age} + 세">나이</span>
 </div>
 <div class='map' id="map" ></div>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=657888584362b34de9ae34668675e958"></script>
+<!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=657888584362b34de9ae34668675e958"></script>
 <script th:inline="javascript">
 
     /*<![CDATA[*/
@@ -194,7 +194,7 @@
     var zoomControl = new kakao.maps.ZoomControl();
     map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-</script>
+</script> -->
 <div class='resTable' id="resTable">
     <div class="panel-body" id="resInfo">
         <div class="table-responsive">
@@ -216,6 +216,9 @@
             </table>
         </div>
     </div>
+
+
 </div>
+    <div class='wave'></div>
 </body>
 </html>
