@@ -14,7 +14,7 @@
     <span th:text="${childDetailInfo.age} + 세">나이</span>
 </div>
 <div class='map' id="map" ></div>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=657888584362b34de9ae34668675e958"></script>
+<!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=657888584362b34de9ae34668675e958"></script>
 <script th:inline="javascript">
 
     /*<![CDATA[*/
@@ -202,7 +202,7 @@
     var zoomControl = new kakao.maps.ZoomControl();
     map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-</script>
+</script> -->
 <div class='resTable' id="resTable">
     <div class="panel-body" id="resInfo">
         <div class="table-responsive">
@@ -219,7 +219,7 @@
                     <td th:text = "${c.resName}">식당이름</td>
                     <td th:text = "${c.resAddress}">주소</td>
                     <td th:with="baseUrl=${c.resLink}">
-                        <a id="getLink" th:href="@{${baseUrl}}">링크</a>
+                        <a class='getLink' id="getLink" th:href="@{${baseUrl}}">링크</a>
                     </td>
                 </tr>
                 </tbody>
