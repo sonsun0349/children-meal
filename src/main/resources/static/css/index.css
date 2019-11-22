@@ -30,12 +30,12 @@ body {
     margin: 0;
 }
 
-a{
+.getLink{
     text-decoration: none;
     margin:15px 0;
 }
 
-a:hover{
+.getLink:hover{
     color:#659104;
     font-weight: bold;
 }
