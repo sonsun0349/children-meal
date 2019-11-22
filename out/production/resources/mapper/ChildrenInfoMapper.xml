@@ -20,7 +20,7 @@
     </select>
 
     <sql id="resList" >
-        select ri.region_lat,ri.region_lng
+        select rt.region_lat,rt.region_lng,rt.res_name
         from region_info as ri
         join restaurant as rt
         on ri.region_code = rt.region_code
