@@ -219,7 +219,7 @@
                     <td th:text = "${c.resName}">식당이름</td>
                     <td th:text = "${c.resAddress}">주소</td>
                     <td th:with="baseUrl=${c.resLink}">
-                        <a class='getLink' id="getLink" th:href="@{${baseUrl}}" style='text-decoration: none;'>링크</a>
+                        <a class='getLink' id="getLink" th:href="@{${baseUrl}}" >링크</a>
                     </td>
                 </tr>
                 </tbody>
