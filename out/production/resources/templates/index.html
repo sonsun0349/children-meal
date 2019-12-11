@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8"/>
     <title>ChildrenMeal</title>
-    <link rel="stylesheet" type="text/css" href="../css/index.css"/>
-
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.qrcode.js"></script>
+    <script type="text/javascript" src="../static/js/qrcode.js"></script>
 </head>
 <body>
-<div class='wave'></div>
 <div class="userInfo">
-    <img src="../img/user.png" />
+    <img src="../static/img/user.png" />
     <span th:text="${childDetailInfo.name}">이름</span>
     <span th:text="${childDetailInfo.age} + 세">나이</span>
+    <span th:text="${childDetailInfo.regionName}"></span>
 </div>
 <div class='map' id="map" ></div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=657888584362b34de9ae34668675e958"></script>
@@ -219,7 +221,7 @@
                     <td th:text = "${c.resName}">식당이름</td>
                     <td th:text = "${c.resAddress}">주소</td>
                     <td th:with="baseUrl=${c.resLink}">
-                        <a id="getLink" th:href="@{${baseUrl}}">링크</a>
+                        <a class='getLink' id="getLink" th:href="@{${baseUrl}}" >링크</a>
                     </td>
                 </tr>
                 </tbody>
@@ -227,5 +229,14 @@
         </div>
     </div>
 </div>
+
+<div id="qrcode">결재정보</div>
+<script th:inline="javascript">
+    var name = [[ ${childDetailInfo.name} ]];
+    jQuery("#qrcode").qrcode({
+        text : name
+    });
+</script>
+    <div class='wave'></div>
 </body>
 </html>

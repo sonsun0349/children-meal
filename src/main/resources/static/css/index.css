@@ -137,7 +137,6 @@ body {
 }
 
 
-
 .resTable-content tbody tr {
     border-bottom: 1px solid #ddd;
 }
@@ -149,6 +148,37 @@ body {
 .resTable-content tbody tr:last-of-type {
     border-bottom: 2px solid #659104;
 }
+
+/*.relateTable {*/
+/*    float: left;*/
+/*    margin-left:1rem;*/
+/*    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);*/
+/*    border-radius: 5px 5px 0 0;*/
+/*    z-index: 9999999;*/
+
+/*}*/
+/*.relateTable-content {*/
+/*    border-collapse: collapse;*/
+/*    font-size: 1.2em;*/
+/*    min-width: 400px;*/
+/*    background:#eee;*/
+
+/*}*/
+/*.relateTable-content thead tr {*/
+/*    background-color: #0b2301;*/
+/*    color: #fff;*/
+/*    text-align: left;*/
+/*    font-weight: bold;*/
+/*    padding:12px 15px;*/
+
+/*}*/
+/*.relateTable-content th,*/
+/*.relateTable-content td {*/
+/*    padding: 12px 15px;*/
+
+
+
+/*}*/
 
 
 
