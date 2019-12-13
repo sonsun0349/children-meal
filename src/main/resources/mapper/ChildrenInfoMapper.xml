@@ -9,7 +9,7 @@
     </select>
 
     <select id="getChildInfo" resultType="meal.dto.ChildDetailInfoDto">
-        select c.name,ci.age,r.region_code,r.region_name,ri.region_lat,ri.region_lng from child as c
+        select c.id_num,c.name,ci.age,r.region_code,r.region_name,ri.region_lat,ri.region_lng from child as c
         join child_info as ci
         on c.id_num = ci.id_num
         join region as r
