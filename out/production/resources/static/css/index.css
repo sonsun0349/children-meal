@@ -114,6 +114,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     border-radius: 5px 5px 0 0;
     z-index: 9999999;
+    position: relative;
 }
 
 .resTable-content {
@@ -149,39 +150,23 @@ body {
     border-bottom: 2px solid #659104;
 }
 
-/*.relateTable {*/
-/*    float: left;*/
-/*    margin-left:1rem;*/
-/*    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);*/
-/*    border-radius: 5px 5px 0 0;*/
-/*    z-index: 9999999;*/
-
-/*}*/
-/*.relateTable-content {*/
-/*    border-collapse: collapse;*/
-/*    font-size: 1.2em;*/
-/*    min-width: 400px;*/
-/*    background:#eee;*/
-
-/*}*/
-/*.relateTable-content thead tr {*/
-/*    background-color: #0b2301;*/
-/*    color: #fff;*/
-/*    text-align: left;*/
-/*    font-weight: bold;*/
-/*    padding:12px 15px;*/
-
-/*}*/
-/*.relateTable-content th,*/
-/*.relateTable-content td {*/
-/*    padding: 12px 15px;*/
-
-
-
-/*}*/
-
-
-
+.button {
+    width:100px;
+    height: 50px;
+    background-color: #eeeeee;
+    color:#2d5201;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px;
+    cursor: pointer;
+    border-radius:10px;
+    position: static;
+    /*font-weight: bold;*/
+    font-family: '양진체';
+}
 /* kakao API CSS  */
 .wrap {
     position: absolute;
@@ -287,4 +272,15 @@ body {
 
 .info .link {
     color: #5085BB;
+}
+.qrClass {
+    position: absolute;
+    left : 800px;
+    top : 400px;
+}
+.getLink {
+    color:#659104;
+    background-color: #eeeeee;
+    text-decoration: none;
+    text-align: center;
 }

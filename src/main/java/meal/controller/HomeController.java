@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class HomeController {
 
@@ -27,6 +29,12 @@ public class HomeController {
     @RequestMapping(value = "/loginProcess",method = RequestMethod.POST)
     public ModelAndView isLogin(@RequestParam("loginId") String id, @RequestParam("loginPw") String pw){
         return childService.loginProcess(id,pw);
+    }
+
+    @RequestMapping(value = "/logout",method = RequestMethod.GET)
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/";
     }
 
 }

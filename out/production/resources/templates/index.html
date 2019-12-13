@@ -14,6 +14,22 @@
     <span th:text="${childDetailInfo.name}">이름</span>
     <span th:text="${childDetailInfo.age} + 세">나이</span>
     <span th:text="${childDetailInfo.regionName}"></span>
+    <span><button onclick="onQrCode()" onmouseover="this.style.backgroundColor='SeaGreen'"
+                  onmouseout="this.style.backgroundColor=''"
+                  class="button">결제<strong>QR</strong>코드</button></span>
+
+    <span><button onclick="window.open('http://www.heemang.or.kr/heemang/point/mng/init.han','_blank')"
+                  onmouseover="this.style.backgroundColor='MediumSeaGreen'"
+                  onmouseout="this.style.backgroundColor=''"
+                  id="balanceCheck" class="button">잔액조회</button> </span>
+
+    <span class="logout" style=" position: relative; text-decoration: none">
+        <button class="button"
+            onmouseover="this.style.backgroundColor='LightSalmon'"
+            onmouseout="this.style.backgroundColor=''">
+        <a href="/logout" style="text-decoration: none; color:#2d5201; font-family: '양진체';">로그아웃</a>
+        </button>
+    </span>
 </div>
 <div class='map' id="map" ></div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=657888584362b34de9ae34668675e958"></script>
@@ -211,9 +227,9 @@
             <table id="licenseTable" class = "resTable-content">
                 <thead>
                 <tr>
-                    <th>식당이름</th>
-                    <th>주소</th>
-                    <th>관련링크</th>
+                    <th style="text-align: center;">식당이름</th>
+                    <th style="text-align: center;">주소</th>
+                    <th style="text-align: center;">관련링크</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -221,7 +237,9 @@
                     <td th:text = "${c.resName}">식당이름</td>
                     <td th:text = "${c.resAddress}">주소</td>
                     <td th:with="baseUrl=${c.resLink}">
-                        <a class='getLink' id="getLink" th:href="@{${baseUrl}}" >링크</a>
+                        <a class='getLink' id="getLink" th:href="@{${baseUrl}}" target="_blank"
+                        onmouseover="this.style.color='IndianRed'"
+                        onmouseout="this.style.color=''">바로가기</a>
                     </td>
                 </tr>
                 </tbody>
@@ -229,12 +247,20 @@
         </div>
     </div>
 </div>
-
-<div id="qrcode">결재정보</div>
+<div class="qrClass" id="qrcode" style="display: none"></div>
 <script th:inline="javascript">
-    var name = [[ ${childDetailInfo.name} ]];
+    function onQrCode() {
+        var x = document.getElementById("qrcode");
+        if(x.style.display=="none"){
+            x.style.display = "block";
+        }
+        else{
+            x.style.display = "none";
+        }
+    };
+    var idNum = [[ ${childDetailInfo.idNum} ]];
     jQuery("#qrcode").qrcode({
-        text : name
+        text : idNum
     });
 </script>
     <div class='wave'></div>

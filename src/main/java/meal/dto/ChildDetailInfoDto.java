@@ -6,6 +6,9 @@ import lombok.Data;
 @Data
 public class ChildDetailInfoDto {
 
+    @ApiModelProperty("주민번호")
+    private String idNum;
+
     @ApiModelProperty("이름")
     private String name;
 
