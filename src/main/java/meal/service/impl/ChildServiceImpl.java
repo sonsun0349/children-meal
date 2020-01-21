@@ -48,6 +48,8 @@ public class ChildServiceImpl implements ChildService {
             mav.addObject("isLoginSuccess",isLoginSuccess);
         }
 
+        System.out.println("test");
+
         System.out.println("test2");
         return mav;
     }
