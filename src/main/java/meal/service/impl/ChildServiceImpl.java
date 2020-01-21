@@ -55,4 +55,7 @@ public class ChildServiceImpl implements ChildService {
         System.out.println("test4");
         return mav;
     }
+    public void test(){
+
+    }
 }
