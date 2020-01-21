@@ -47,6 +47,8 @@ public class ChildServiceImpl implements ChildService {
             mav.setViewName("/login");
             mav.addObject("isLoginSuccess",isLoginSuccess);
         }
+
+        System.out.println("test");
         return mav;
     }
 }
