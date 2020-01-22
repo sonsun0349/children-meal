@@ -58,4 +58,7 @@ public class ChildServiceImpl implements ChildService {
     public void test(){
 
     }
+    public void test1(){
+
+    }
 }
